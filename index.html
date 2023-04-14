@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <title>Choose New Password</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,300;1,700&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet"/>
+    <body>
+        <div class="form-container-div position-absolute top-50 start-50 translate-middle">
+            <div class="form-innercontainer-div">
+                <h3>Choose new password</h3>
+                <p class="heading2">Almost done. Enter your new password and your all set.</p>
+                <div class="sec-div">
+                    <p class="inputLabel">Create a password</p>
+                    <input type="password" id="inputPassword1" class="form-control">
+                </div>
+                <div class="sec-div">
+                    <p class="inputLabel">Confirm new password</p>
+                    <input type="password" id="inputPassword2" class="form-control">
+                </div>
+                <div class="sec-div">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck1" onclick="this. checked=false;">
+                                <label class="form-check-label" id="defaultCheck1label">
+                                    one lowercase character
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck2" onclick="this. checked=false;">
+                                <label class="form-check-label" id="defaultCheck2lable">
+                                    one upercase character
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck3" onclick="this. checked=false;">
+                                <label class="form-check-label" id="defaultCheck3lable">
+                                    one number
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck4" onclick="this. checked=false;">
+                                <label class="form-check-label" id="defaultCheck4lable">
+                                    one special character
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck5" onclick="this. checked=false;">
+                                <label class="form-check-label" id="defaultCheck5lable">
+                                    8 character minimum
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-primary" id="resetbutton">Reset password</button>
+                </div>
+                <div class="message-sec">
+                    <div id="alertdanger" style="visibility: hidden">
+                        <strong>Error!</strong> password does not meet the requirements.
+                    </div>
+                    <div id="alertsucess" style="visibility: hidden">
+                        <strong>Password changed successfully!</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            resetbutton.addEventListener("click", function() {
+               if (inputPassword1.value.match(/[a-z]/)) {
+                 defaultCheck1.checked = true;
+                 defaultCheck1label.style.color = "#12a561"
+               } else {
+                 defaultCheck1.checked = false;
+                 defaultCheck1.style.background = "red";
+                 defaultCheck1label.style.color = "red"
+                 alertdanger.style.visibility = "visible"
+               }
+           
+               if (inputPassword1.value.match(/[A-Z]/)) {
+                   defaultCheck2.checked = true;
+                   defaultCheck2lable.style.color = "#12a561"
+               } else {
+                   defaultCheck2.checked = false;
+                   defaultCheck2.style.background = "red";
+                   defaultCheck2lable.style.color = "red";
+                   alertdanger.style.visibility = "visible"
+               }
+           
+               if (inputPassword1.value.match(/[0-9]/)) {
+                   defaultCheck3.checked = true;
+                   defaultCheck3lable.style.color = "#12a561"
+               } else {
+                   defaultCheck3.checked = false;
+                   defaultCheck3.style.background = "red";
+                   defaultCheck3lable.style.color = "red";
+                   alertdanger.style.visibility = "visible"
+               }
+           
+               if (inputPassword1.value.match(/[!@#$%^&*(),.?":{}|<>]/)) {
+                   defaultCheck4.checked = true;
+                   defaultCheck4lable.style.color = "#12a561"
+               } else {
+                   defaultCheck4.checked = false;
+                   defaultCheck4.style.background = "red";
+                   defaultCheck4lable.style.color = "red";
+                   alertdanger.style.visibility = "visible"
+               }
+           
+               if (inputPassword1.value.length >= "8") {
+                   defaultCheck5.checked = true;
+                   defaultCheck5lable.style.color = "#12a561"
+               }else {
+                   defaultCheck5.checked = false;
+                   defaultCheck5.style.background = "red";
+                   defaultCheck5lable.style.color = "red";
+                   alertdanger.style.visibility = "visible"
+               }
+               if(inputPassword1.value === ""){
+                   alertdanger.style.visibility = "visible"
+                   alertsucess.style.visibility = "hidden"
+               }
+               if(inputPassword1.value != inputPassword2.value){
+                   alertdanger.style.visibility = "visible"
+                   alertsucess.style.visibility = "hidden"
+               }
+               if((inputPassword1.value === inputPassword2.value) && 
+               (defaultCheck1.checked === true) && (defaultCheck2.checked === true) &&
+               (defaultCheck3.checked === true) && (defaultCheck4.checked === true) && (defaultCheck5.checked === true) && (inputPassword1.value != "")){
+                   alertdanger.style.visibility = "hidden"
+                   alertsucess.style.visibility = "visible"
+               }
+           });
+           
+        </script>
+    </body>
+
+</html>

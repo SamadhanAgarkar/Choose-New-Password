@@ -1,0 +1,60 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.form-container-div {
+    padding: 10px;
+    background: #eae9e9f7;
+}
+
+.form-innercontainer-div {
+    padding: 40px 30px 40px;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.inputLabel {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.sec-div {
+    margin-bottom: 30px;
+}
+
+.form-check-input {
+    border-radius: 50% !important;
+}
+h3{
+    font-weight: 700;
+}
+.heading2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000a3;
+}
+.form-check-input:checked {
+    background-color: #12a561;
+    border-color: #12a561;
+}
+.alert-dismissible .btn-close{
+    padding: 10px;
+}
+.message-sec{
+    position:relative;
+}
+#alertdanger{
+    padding: 5px;
+    margin-top: 10px;
+    color:red;
+    text-align:center;
+}
+#alertsucess{
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    color: #12a561;
+    text-align:center;
+	width: 100%;
+}
